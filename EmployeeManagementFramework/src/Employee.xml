@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+     <bean  id = "DAO"   class = "in.com.cg.dataLayerDAO.EmployeeDAO">
+     </bean>
+     
+     <bean id = "Servicelayer" class = "in.com.cg.ServiceLayer.ServiceLayer">
+       <property name="dao"  ref="DAO"></property>
+     </bean>  
+
+    <bean id = "appController" class = "in.com.cg.AppController.AppController">
+       <property name="serviceLayer"  ref="Servicelayer"></property>
+     </bean> 
+
+</beans>
